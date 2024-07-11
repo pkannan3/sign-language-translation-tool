@@ -28,7 +28,7 @@ def user_input(request):
         input_message = request.data.get('message', '')
 
         if input_message:
-            translated_message = f"Translated Message: {input_message}"
+            translated_message = "Translated Message: <place holder>"
             return Response({
                 "message": "Successful Translation!",
                 "translated_message": translated_message

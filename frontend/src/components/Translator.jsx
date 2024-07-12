@@ -12,13 +12,18 @@ function Translator() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // reset error and response before making a new request
+        setErrorMessage('');
+        setResponseMessage('');
+
+        // assign apiURL: deployed vs local URLs and add a console.log to debug
+        const apiURL = import.meta.env.TRANSLATOR_API_URL || 'http://localhost:5173/';
+        console.log('Sending request to: ' + apiURL + '/translator/');
 
         // send a POST request to API endpoint
         // indicate method, headers, and JSON body
 
-        // reset error and response before making a new request
 
-        // assign apiURL: deployed vs local URLs and add a console.log to debug
 
         // if response is successful (200)
             // save response as a JSON

@@ -43,8 +43,9 @@ function Translator() {
                 const invalidData = await response.json();
                 setErrorMessage(invalidData.message);
             }
-        } catch () {
-            pass
+        } catch (errorMessage) {
+            setErrorMessage('An error occured while fetching data.')
+            console.log(error)
         }
 
 

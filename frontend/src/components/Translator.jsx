@@ -18,19 +18,39 @@ function Translator() {
 
         // assign apiURL: deployed vs local URLs and add a console.log to debug
         const apiURL = import.meta.env.TRANSLATOR_API_URL || 'http://localhost:5173/';
-        console.log('Sending request to: ' + apiURL + '/translator/');
+        console.log(`Request sent to: ${apiURL}/translator/`);
 
         // send a POST request to API endpoint
         // indicate method, headers, and JSON body
+        try {
+            const response = await fetch(`${apiURL}/translator/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: input }),
+            });
+
+            // if response is successful (200)
+            if (response.ok) {
+                // save response as a JSON
+                // update response message to message attached to response data
+                const validData = await response.json();
+                setResponseMessage(validData.message);
+            } else {
+                // save response as a JSON
+                // set the error useState to error message attached to response data
+                const invalidData = await response.json();
+                setErrorMessage(invalidData.message);
+            }
+        } catch () {
+            pass
+        }
 
 
 
-        // if response is successful (200)
-            // save response as a JSON
-            // update response message to message attached to response data
         // esle
-            // save response as a JSON
-            // set the error useState to error message attached to response data
+
 
     }
 

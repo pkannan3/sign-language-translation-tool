@@ -1,7 +1,5 @@
 # sign-language-translation-tool
 
-<!--
-
 Tools: Python, Django, RESTful API, Postman Agent
 
 Task Description:
@@ -35,5 +33,3 @@ Reference Material:
 - https://www.django-rest-framework.org/api-guide/views/#api_view
 - https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#request-objects
 - https://www.django-rest-framework.org/api-guide/status-codes/
-
--->

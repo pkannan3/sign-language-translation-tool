@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import "../App.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 function Translator() {
     const [input, setInput] = useState('');
@@ -52,12 +54,17 @@ function Translator() {
     }
 
     return (
-        <>
-            <Form.Control size="lg" type="text" placeholder="Input Text for Translation Here" />
-            <Button variant="secondary" size="lg">
-                Block level button
-            </Button>
-        </>
+        <Card style={{ width: '18rem' }}>
+            <Card.Body>
+                <Card.Title>
+                    Translator
+                </Card.Title>
+                <Form.Control size="lg" type="text" placeholder="Input Text for Translation Here" />
+                <Button variant="secondary" size="lg">
+                    Block level button
+                </Button>
+            </Card.Body>
+        </Card>
     );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../App.css";
+import Form from 'react-bootstrap/Form';
 
 function Translator() {
     const [input, setInput] = useState('');
@@ -47,16 +48,13 @@ function Translator() {
             setErrorMessage('An error occured while fetching data.')
             console.log(error)
         }
-
-
-
-        // esle
-
-
     }
 
     return (
-        pass
+        <>
+            <Form.Control size="lg" type="text" placeholder="Input Text for Translation Here" />
+
+        </>
     );
 }
 

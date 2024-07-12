@@ -21,7 +21,7 @@ function Translator() {
         setResponseMessage('');
 
         // assign apiURL: deployed vs local URLs and add a console.log to debug
-        const apiURL = import.meta.env.TRANSLATOR_API_URL || 'http://localhost:5173/';
+        const apiURL = import.meta.env.TRANSLATOR_API_URL || 'http://localhost:8000';
         console.log(`Request sent to: ${apiURL}/translator/`);
 
         // send a POST request to API endpoint
@@ -48,8 +48,8 @@ function Translator() {
                 setErrorMessage(invalidData.message);
             }
         } catch (errorMessage) {
-            setErrorMessage('An error occured while fetching data.')
-            console.log(error)
+            console.error('Error:', error);
+            setErrorMessage('An error occured while fetching data.');
         }
     }
 
@@ -59,10 +59,19 @@ function Translator() {
                 <Card.Title>
                     Translator
                 </Card.Title>
-                <Form.Control size="lg" type="text" placeholder="Input Text for Translation Here" />
-                <Button variant="secondary" size="lg">
-                    Block level button
+                <Form onSubmit={handleSubmit}>
+                <Form.Control value={input} onChange={handleInputChange} size="lg" type="text" placeholder="Enter Text for Translation Here" />
+                <Button variant="secondary" size="lg" type="submit">
+                    Submit
                 </Button>
+                </Form>
+                {/* conditionally populate */}
+                {responseMessage ? (
+                    <div>{responseMessage}</div>
+                ) : null}
+                {errorMessage ? (
+                    <div>{errorMessage}</div>
+                ) : null}
             </Card.Body>
         </Card>
     );

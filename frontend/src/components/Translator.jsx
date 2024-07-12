@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "../App.css";
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function Translator() {
     const [input, setInput] = useState('');
@@ -53,7 +54,9 @@ function Translator() {
     return (
         <>
             <Form.Control size="lg" type="text" placeholder="Input Text for Translation Here" />
-
+            <Button variant="secondary" size="lg">
+                Block level button
+            </Button>
         </>
     );
 }

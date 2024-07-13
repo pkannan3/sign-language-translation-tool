@@ -16,4 +16,4 @@ RUN npm install
 EXPOSE 8000
 
 # Command to run the application
-CMD ["npm", "run", "start"]
+CMD ["python manage.py migrate && python manage.py run server"]

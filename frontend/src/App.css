@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,57 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+body {
+  background-color: #161515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #f3f3f3;
+  box-shadow: 0 3px 6px rgb(184, 184, 184);
+  border-radius: 5px;
+  padding: 50px 20px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+button {
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1rem;
+  /*background-color: ;*/
+}
+
+.response-message, .error-message {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.response-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
 }

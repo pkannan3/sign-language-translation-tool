@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import "../App.css";
+import "../App.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -54,23 +54,23 @@ function Translator() {
     }
 
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card className='card' style={{ width: '18rem' }}>
             <Card.Body>
-                <Card.Title>
-                    Translator
+                <Card.Title className='card-title'>
+                    Translator App
                 </Card.Title>
                 <Form onSubmit={handleSubmit}>
-                <Form.Control value={input} onChange={handleInputChange} size="lg" type="text" placeholder="Enter Text for Translation Here" />
+                <Form.Control className='form-control' value={input} onChange={handleInputChange} size="lg" type="text" placeholder="Enter Text for Translation Here" />
                 <Button variant="secondary" size="lg" type="submit">
                     Submit
                 </Button>
                 </Form>
                 {/* conditionally populate */}
                 {responseMessage ? (
-                    <div>{responseMessage}</div>
+                    <div className='response-message'>{responseMessage}</div>
                 ) : null}
                 {errorMessage ? (
-                    <div>{errorMessage}</div>
+                    <div className='error-message'>{errorMessage}</div>
                 ) : null}
             </Card.Body>
         </Card>

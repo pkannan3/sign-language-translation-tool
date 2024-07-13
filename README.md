@@ -25,6 +25,17 @@ Test via Postman Agent:
             "message": "hello"
         }
 
+Run Locally:
+- Step 1:
+  1. cd backend
+  2. source ./.venv/bin/source
+  3. python manage.py run server
+- Step 2 (in a new terminal):
+  1. cd frontend
+  2. npm run dev
+- Step 3
+  1. Launch http://localhost:5173/translator/ in browser
+
 GitHub Repository:
 https://github.com/pkannan3/sign-language-translation-tool
 
@@ -33,3 +44,5 @@ Reference Material:
 - https://www.django-rest-framework.org/api-guide/views/#api_view
 - https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#request-objects
 - https://www.django-rest-framework.org/api-guide/status-codes/
+- https://react.dev/
+- https://react-bootstrap.netlify.app/
